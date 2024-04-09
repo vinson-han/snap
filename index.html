@@ -1,39 +1,108 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="scripts.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="main-header">
-        <h1 class="title">LA TV Shows</h1>
+      <ul>
+        <li><h1 class="title">LA TV Shows</h1></li>
+        <li>
+          <input class="search" placeholder="Enter Search Text..." /><button
+            onclick="search();"
+          >
+            Search
+          </button>
+        </li>
+      </ul>
     </header>
-    <div id="card-container">
-        
-    </div>
-    <div class="card" style="display: none;">
-        <div class="card-content">
-            <h2>TV Show Title</h2>
-            <img src="" alt="TV Show Poster">
-            <ul>
-                <li>Bullet Point 1</li>
-                <li>Bullet Point 2</li>
-                <li>Bullet Point 3</li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer">
-        <button onclick="quoteAlert();">
-            Get A Quote!
-        </button>
-        <button onclick="removeLastCard();">
-            Remove A Card!
-        </button>
-    </div>
-</body>
 
+    <div class="sortingFeature">
+      <label for="sortAlpha">
+        <div class="container">
+          <select
+            size="1"
+            name="sortAlpha"
+            id="sortAlpha"
+            onchange="sortAlpha()"
+          >
+            <option>Sort AtoZ</option>
+            <option disabled>Select Order</option>
+            <option value="a">A-Z</option>
+            <option value="z">Z-A</option>
+          </select>
+        </div>
+      </label>
+
+      <label for="sortRating">
+        <div class="container">
+          <select name="sortRating" id="sortRating" onchange="sortRating();">
+            <option>Rating</option>
+            <option disabled>Select Rating</option>
+            <option value="asc">Top Rating</option>
+            <option value="dsc">Lowest Rating</option>
+          </select>
+        </div>
+      </label>
+      <label for="selectGenre">
+        <div class="container">
+          <select name="selectGenre" id="selectGenre" onchange="sortGenre()">
+            <option value="all">All Genre</option>
+            <option disabled>Select Genres</option>
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+            <option value="crime">Crime</option>
+            <option value="drama">Drama</option>
+            <option value="horror">Horror</option>
+            <option value="Romance">Romance</option>
+            <option value="sci-fi">Sci-fi</option>
+            <option value="thriller">Thriller</option>
+          </select>
+        </div>
+      </label>
+      <label for="displayAmount">
+        <div class="container">
+          <select
+            size="1"
+            name="displayAmount"
+            id="displayAmount"
+            onchange="displayAmount()"
+          >
+            <option value="all">All</option>
+            <option disabled>Select Amount</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="10">20</option>
+          </select>
+        </div>
+      </label>
+    </div>
+    <main>
+      <div id="card-container"></div>
+      <div class="card" style="display: none">
+        <div class="card-content">
+          <h2>TV Show Title</h2>
+          <img src="" alt="TV Show Poster" />
+          <ul>
+            <li class="rating">Bullet Point 1</li>
+            <li class="genre">Bullet Point 2</li>
+            <li class="description">Bullet Point 3</li>
+          </ul>
+          <button class="quote">Get a Quote</button>
+          <button class="seen"></button>
+          <button class="delete">Delete</button>
+        </div>
+      </div>
+    </main>
+    <div class="footer">
+      <button onclick="quoteAlert();">Get A Random TV Quote!</button>
+      <button onclick="removeLastCard();">Remove A The Last Card!</button>
+      <button onclick="reset();">Reset Catalog</button>
+    </div>
+  </body>
 </html>

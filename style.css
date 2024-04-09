@@ -1,70 +1,215 @@
 html,
 body {
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  background-color: #81bcda;
+  background-image: linear-gradient(
+    270deg,
+    #81bcda 0%,
+    #5fb0e4 11%,
+    #9599e2 58%
+  );
 }
 
 .main-header {
-    background-color: rgba(0, 0, 0, .3);
-    padding-bottom: 10px;
+  display: flex;
+  width: 100%;
+  border: 1px solid red;
+}
+.main-header > ul {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+
+  padding: 0;
+  width: 100%;
+}
+
+.main-header > ul > li {
+  width: 575px;
+  text-align: center;
+  border: solid 1px #2d9fd9;
+}
+
+.main-header > ul > li:last-child {
+  display: flex;
+  justify-content: center;
+  border: solid 1px blue;
+}
+.main-header input {
+  outline: none;
+  height: 40px;
+  width: 400px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.main-header button {
+  width: 247px;
 }
 
 .title {
-    text-align: center;
-    margin: 0;
-    font-size: 8em;
-    font-family: "Helvetica";
-    font-weight: normal;
-    color: white;
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+  font-size: 4rem;
+  font-family: "Helvetica";
+  font-weight: normal;
+  color: white;
 }
 
 #card-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card {
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 5px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  background-color: rgb(240, 238, 238);
 }
 
 .card-content {
-    padding: 20px;
-    font-family: "Verdana";
-    color: #777;
+  padding: 20px;
+  font-family: "Verdana";
 }
 
 .card-content h2 {
-    margin-top: 0;
-    font-size: 20px;
+  margin-top: 0;
+  font-size: 20px;
 }
 
 .card img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+}
+.card ul {
+  list-style: none;
+  padding: 0.5em;
+  margin: 0;
+}
+
+.sortingFeature {
+  margin: 0;
+  padding: 0;
 }
 
 .footer {
-    display: flex;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, .3);
-    padding: 10px;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+  padding: 10px;
 }
 
-button {
-    text-align: center;
-    background-color: #666;
-    border: none;
-    padding-left: 10px;
-    padding-right: 10px;
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.footer button {
+  text-align: center;
+  background-color: #666;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 40px;
+  border-radius: 10px;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+@media (max-width: 650px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  span {
+    font-size: 2rem;
+  }
+  select {
+    width: 400px;
     height: 40px;
-    border-radius: 10px;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    margin: 5px;
+    text-align: center;
+  }
+
+  .main-header > ul > li {
+    width: auto;
+
+    border: solid 1px #2d9fd9;
+  }
+  .main-header > ul > li:last-child {
+    display: flex;
+    flex-direction: column;
+    text-decoration: center;
+  }
+
+  .main-header input {
+    outline: none;
+    height: 40px;
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .main-header button {
+    width: 406px;
+    height: 40px;
+    align-self: center;
+  }
+}
+
+@media (min-width: 650px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    text-align: center;
+  }
+
+  span {
+    font-size: 1.5rem;
+    width: 50%;
+  }
+  select {
+    width: 50%;
+    height: 40px;
+    text-align: center;
+  }
+}
+
+/* Tablet CSS */
+
+/* Desktop */
+@media (min-width: 980px) {
+  .sortingFeature {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    width: 100%;
+  }
+
+  span {
+    margin-right: 10px;
+    font-size: 1rem;
+  }
+  select {
+    width: 200px;
+    height: 40px;
+  }
 }
