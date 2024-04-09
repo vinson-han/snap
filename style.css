@@ -17,7 +17,6 @@ body {
 .main-header {
   display: flex;
   width: 100%;
-  border: 1px solid red;
 }
 .main-header > ul {
   display: flex;
@@ -32,13 +31,11 @@ body {
 .main-header > ul > li {
   width: 575px;
   text-align: center;
-  border: solid 1px #2d9fd9;
 }
 
 .main-header > ul > li:last-child {
   display: flex;
   justify-content: center;
-  border: solid 1px blue;
 }
 .main-header input {
   outline: none;
